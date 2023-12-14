@@ -8,8 +8,7 @@ function ProductForm() {
     const [prodQuantity, setProdQuantity] = useState(0)
     const [prodCat, setProdCat] = useState("")
 
-    const {categories, loading, error} = useSelector(state => state.categories)
-    const {products} = useSelector(state => state.products)
+    const {categories} = useSelector(state => state.categories)
     const dispatch = useDispatch()
 
     useEffect(()=>{

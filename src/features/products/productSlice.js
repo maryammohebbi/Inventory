@@ -17,7 +17,8 @@ export const addProduct = createAsyncThunk("product/addProduct", async(payload, 
             id: Date.now(),
             title: payload.prodTitle,
             quantity: payload.prodQuantity,
-            category: payload.prodCat
+            category: payload.prodCat,
+            createdAt: new Date().toISOString(),
         })
         return data
 

@@ -11,32 +11,49 @@
       "createdAt": "2023-12-14T19:51:45.033Z",
       "title": "Book",
       "description": "Books for reading."
+    },
+    {
+      "id": 1702590938998,
+      "createdAt": "2023-12-14T21:55:38.998Z",
+      "title": "Pencil",
+      "description": "All the writing stuff..."
     }
   ],
   "products": [
     {
-      "id": 1702583576165,
+      "id": 1702595320761,
       "title": "Stylish",
       "quantity": "70",
-      "category": "Pen"
+      "category": "Pen",
+      "createdAt": "2023-12-14T23:08:40.761Z"
     },
     {
-      "id": 1702583633364,
+      "id": 1702595350046,
       "title": "In the time of the butterflies",
       "quantity": "20",
-      "category": "Book"
+      "category": "Book",
+      "createdAt": "2023-12-14T23:09:10.046Z"
     },
     {
-      "id": 1702583660157,
+      "id": 1702595367150,
       "title": "Dr. Panter",
       "quantity": "45",
-      "category": "Pen"
+      "category": "Pen",
+      "createdAt": "2023-12-14T23:09:27.150Z"
     },
     {
-      "id": 1702587888490,
+      "id": 1702595380454,
       "title": "Glasser's Choice Theory",
       "quantity": "67",
-      "category": "Book"
+      "category": "Book",
+      "createdAt": "2023-12-14T23:09:40.454Z"
+    },
+    {
+      "id": 1702595666239,
+      "title": "Stedler",
+      "quantity": "29",
+      "category": "Pencil",
+      "createdAt": "2023-12-14T23:14:26.239Z"
     }
   ]
 }

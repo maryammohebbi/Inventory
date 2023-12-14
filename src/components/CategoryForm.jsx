@@ -14,6 +14,7 @@ function CategoryForm() {
         dispatch(addCategory({title, description}))
         setTitle("")
         setDescription("")
+        setOpen(false)
     }
   return (
     <div className='section'>

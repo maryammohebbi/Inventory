@@ -1,0 +1,42 @@
+{
+  "categories": [
+    {
+      "id": 1702583481548,
+      "createdAt": "2023-12-14T19:51:21.548Z",
+      "title": "Pen",
+      "description": "Some text for explaining..."
+    },
+    {
+      "id": 1702583505033,
+      "createdAt": "2023-12-14T19:51:45.033Z",
+      "title": "Book",
+      "description": "Books for reading."
+    }
+  ],
+  "products": [
+    {
+      "id": 1702583576165,
+      "title": "Stylish",
+      "quantity": "70",
+      "category": "Pen"
+    },
+    {
+      "id": 1702583633364,
+      "title": "In the time of the butterflies",
+      "quantity": "20",
+      "category": "Book"
+    },
+    {
+      "id": 1702583660157,
+      "title": "Dr. Panter",
+      "quantity": "45",
+      "category": "Pen"
+    },
+    {
+      "id": 1702583848478,
+      "title": "Kian",
+      "quantity": "80",
+      "category": "Pen"
+    }
+  ]
+}

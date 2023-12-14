@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getProducts } from '../features/products/productSlice'
+import { deleteProduct, getProducts } from '../features/products/productSlice'
 
 function ProductList() {
     const {products, loading, error} = useSelector(state=> state.products)
@@ -25,7 +25,7 @@ function ProductList() {
                                 <span className="text-slate-400 text-sm">{new Date().toLocaleDateString("fa-IR")}</span>
                                 <span className="text-slate-500 border border-slate-500 px-2 rounded-xl">{product.category}</span>
                                 <span className="border-2 border-slate-300 rounded-full w-6 h-6 bg-slate-500 font-bold flex items-center justify-center p-1 text-slate-300">{product.quantity}</span>
-                                <button className="delete-product text-red-400 text-sm font-bold">delete</button>
+                                <DeleteProduct {...product}/>
                             </div>
                         </div> 
                     )
@@ -37,6 +37,17 @@ function ProductList() {
 }
 
 export default ProductList
+
+function DeleteProduct({id}){
+    const dispatch = useDispatch()
+    return(
+        <button 
+            onClick={()=> dispatch(deleteProduct({id}))}
+            className="text-red-400 text-sm font-bold">
+                delete
+            </button>
+    )
+}
 
 function Search(){
     return(

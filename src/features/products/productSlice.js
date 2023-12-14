@@ -71,6 +71,8 @@ const productSlice = createSlice({
         })
         .addCase(deleteProduct.fulfilled, (state, action)=>{
             state.products = state.products.filter(product => product.id !== Number(action.payload.id))
+            state.loading = false
+            state.error = ""
         })
         .addCase(deleteProduct.rejected, (state, action)=>{
             state.products = []

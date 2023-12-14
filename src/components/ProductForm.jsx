@@ -7,11 +7,6 @@ function ProductForm() {
     const [prodTitle, setProdTitle] = useState("")
     const [prodQuantity, setProdQuantity] = useState(0)
     const [prodCat, setProdCat] = useState("")
-    // const [productFormData, setProductFormData] = useState({
-    //     title: "",
-    //     quantity: 0,
-    //     category: "",
-    // })
 
     const {categories, loading, error} = useSelector(state => state.categories)
     const {products} = useSelector(state => state.products)
@@ -21,23 +16,12 @@ function ProductForm() {
         dispatch(getCategories())
     }, [])
 
-    // const changeHandler = (e)=>{
-    //     const {name, value} = e.target 
-    //     setProductFormData({...productFormData, [name]: value})
-
-    // }
     const handleSubmit = (e)=> {
         e.preventDefault()
         dispatch(addProduct({prodTitle, prodQuantity, prodCat}))
         setProdTitle("")
         setProdQuantity(0)
         setProdCat("")
-        // setProductFormData({
-        //     title: "",
-        //     quantity: 0,
-        //     category: ""
-
-        // })
     }
   return (
     <div className="section mb-5">

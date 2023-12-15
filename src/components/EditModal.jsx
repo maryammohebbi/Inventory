@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { editProduct } from '../features/products/productSlice';
 
@@ -8,6 +8,13 @@ function EditModal({isOpen, setIsOpen, id, title, quantity, category}) {
   const [editCategory, setEditCategoty] = useState(category)
   const {categories} = useSelector(state=> state.categories)
   const dispatch = useDispatch()
+
+  useEffect(() => {
+    setEditTitle(title);
+    setEditQuantity(quantity);
+    setEditCategoty(category);
+  }, [title, quantity, category]);
+
 
   const handleEdit = (e)=>{
     e.preventDefault()
@@ -21,7 +28,7 @@ function EditModal({isOpen, setIsOpen, id, title, quantity, category}) {
           className={`${!isOpen && "hidden"} bg-slate-900 fixed top-0 left-0 right-0 h-full opacity-90 z-10`}>
         </div>
 
-        <div className={`${!isOpen && "hidden"} absolute w-[90%] md:w-[60%] lg:w-[50%] bg-slate-900 z-20 left-[50%] -translate-x-[50%] top-[20%] rounded-lg p-3 shadow-2xl`}>
+        <div className={`${!isOpen && "hidden"} absolute section bg-slate-900 z-20 left-[50%] -translate-x-[50%] top-[20%] rounded-lg p-3 shadow-2xl`}>
             <h1 className="text-slate-400 font-bold">Edit Product</h1>
             <form 
               onSubmit={handleEdit}

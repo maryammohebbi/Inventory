@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { deleteProduct, getProducts } from '../features/products/productSlice'
 import toast from 'react-hot-toast'
 import EditModal from './EditModal'
+import { IoTrashBin } from "react-icons/io5"
+import { FaEdit } from "react-icons/fa"
 
 function ProductList() {
     const {products, loading, error} = useSelector(state=> state.products)
@@ -18,7 +20,6 @@ function ProductList() {
 
      useEffect(()=>{
         const filtered = products.filter(product => product.title.toLowerCase().includes(query.toLowerCase()))
-        // setFilteredProducts(filtered)
         const sortedProducts = sortProducts(filtered, sort);
         setFilteredProducts(sortedProducts)
      }, [query, products, sort])
@@ -30,7 +31,6 @@ function ProductList() {
           } else if (sortOption === 'earliest') {
             return new Date(a.createdAt) - new Date(b.createdAt);
           }
-        //   return 0;
         });
       };
 
@@ -49,7 +49,7 @@ function ProductList() {
                                 <div className="flex items-center gap-x-2">
                                     <span className="text-slate-400 text-sm">{new Date().toLocaleDateString("fa-IR")}</span>
                                     <span className="text-slate-500 border border-slate-500 px-2 rounded-xl">{product.category}</span>
-                                    <span className="border-2 border-slate-300 rounded-full w-6 h-6 bg-slate-500 font-bold flex items-center justify-center p-1 text-slate-300">{product.quantity}</span>
+                                    <span className="border-2 border-slate-300 rounded-full w-6 h-6 bg-slate-500 font-bold flex items-center justify-center p-2 text-slate-300">{product.quantity}</span>
                                     <EditProduct {...product}/>
                                     <DeleteProduct {...product}/>
                                 </div>
@@ -71,7 +71,7 @@ function DeleteProduct({id}){
         <button 
             onClick={()=> dispatch(deleteProduct({id}))}
             className="text-red-400 text-sm font-bold">
-            Delete
+            <IoTrashBin className='w-5 h-5'/>
         </button>
     )
 }
@@ -83,7 +83,7 @@ function EditProduct({id, title, quantity, category}){
             <button 
                 onClick={()=>setIsOpen((is)=> !is)}
                 className="text-blue-400 text-sm font-bold">
-                Edit
+                <FaEdit className='w-5 h-5'/>
             </button>
 
             <EditModal isOpen={isOpen} setIsOpen={setIsOpen} id={id} title={title} quantity={quantity} category={category}/>

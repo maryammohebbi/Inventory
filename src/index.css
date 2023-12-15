@@ -8,6 +8,6 @@
         @apply bg-slate-800;
     }
     .section{
-        @apply container max-w-sm md:max-w-xl mx-auto;
+        @apply container max-w-sm md:max-w-xl mx-auto p-5;
     }
 }

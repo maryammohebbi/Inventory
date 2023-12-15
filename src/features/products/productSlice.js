@@ -36,6 +36,19 @@ export const deleteProduct = createAsyncThunk("product/deleteProduct", async(pay
     }
 })
 
+export const editProduct = createAsyncThunk("product/editproduct", async(payload, {rejectWithValue})=> {
+    try {
+        const {data} = await api.patch(`/products/${payload.id}`, {
+            title: payload.title,
+            quantity: payload.quantity,
+            category: payload.category
+        })
+        return data
+    } catch (error) {
+        return rejectWithValue(error.message)
+    }
+})
+
 const productSlice = createSlice({
     name: "products",
     initialState: {
@@ -79,6 +92,16 @@ const productSlice = createSlice({
             state.products = []
             state.loading = false
             state.error = action.payload
+        })
+        .addCase(editProduct.pending, (state, action)=>{
+            state.loading = true
+        })
+        .addCase(editProduct.fulfilled, (state, action)=> {
+            state.loading = false
+            const selectedProduct = state.products.find(product => product.id === Number(action.payload.id))
+            selectedProduct.title = action.payload.title
+            selectedProduct.quantity = action.payload.quantity
+            selectedProduct.category = action.payload.category
         })
     }
 })

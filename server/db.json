@@ -22,38 +22,24 @@
   "products": [
     {
       "id": 1702595320761,
-      "title": "Stylish",
-      "quantity": "70",
-      "category": "Pen",
+      "title": "Stylishhhhhh",
+      "quantity": "10",
+      "category": "Book",
       "createdAt": "2023-12-14T23:08:40.761Z"
     },
     {
-      "id": 1702595350046,
-      "title": "In the time of the butterflies",
-      "quantity": "20",
-      "category": "Book",
-      "createdAt": "2023-12-14T23:09:10.046Z"
-    },
-    {
       "id": 1702595367150,
-      "title": "Dr. Panter",
-      "quantity": "45",
-      "category": "Pen",
+      "title": "Doctor Panter",
+      "quantity": "68",
+      "category": "new",
       "createdAt": "2023-12-14T23:09:27.150Z"
     },
     {
       "id": 1702595380454,
-      "title": "Glasser's Choice Theory",
-      "quantity": "67",
-      "category": "Book",
-      "createdAt": "2023-12-14T23:09:40.454Z"
-    },
-    {
-      "id": 1702595666239,
-      "title": "Stedler",
-      "quantity": "29",
+      "title": "Choice Theory",
+      "quantity": "5",
       "category": "Pencil",
-      "createdAt": "2023-12-14T23:14:26.239Z"
+      "createdAt": "2023-12-14T23:09:40.454Z"
     }
   ]
 }

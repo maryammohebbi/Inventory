@@ -5,7 +5,7 @@ import {addProduct} from "../features/products/productSlice"
 
 function ProductForm() {
     const [prodTitle, setProdTitle] = useState("")
-    const [prodQuantity, setProdQuantity] = useState(0)
+    const [prodQuantity, setProdQuantity] = useState("")
     const [prodCat, setProdCat] = useState("")
 
     const {categories} = useSelector(state => state.categories)
@@ -19,7 +19,7 @@ function ProductForm() {
         e.preventDefault()
         dispatch(addProduct({prodTitle, prodQuantity, prodCat}))
         setProdTitle("")
-        setProdQuantity(0)
+        setProdQuantity("")
         setProdCat("")
     }
   return (
@@ -42,7 +42,7 @@ function ProductForm() {
                     value={prodQuantity}
                     onChange={(e)=> setProdQuantity(e.target.value)}
                     className="bg-transparent rounded text-slate-400 focus:ring-slate-400 p-2" 
-                    type="number" name="product-quantity" id="product-quantity" placeholder="Quantity..."/>
+                    type="number" name="product-quantity" id="product-quantity" placeholder="0"/>
             </div>
             <div>
                 <label className="block text-slate-400">Category:</label>
@@ -57,11 +57,11 @@ function ProductForm() {
                             categories.map(category => {
                                 return(
                                     <option 
-                                        key={category.id} 
-                                        value={category.title}
-                                        className="text-slate-400 bg-slate-800">
-                                            {category.title}
-                                        </option>
+                                    key={category.id} 
+                                    value={category.title}
+                                    className="text-slate-400 bg-slate-800">
+                                        {category.title}
+                                    </option>
                                 )
                             })
                         }

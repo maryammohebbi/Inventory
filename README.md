@@ -1,8 +1,36 @@
-# React + Vite
+<p>An Inventory app using react.js, redux toolkit and tailwindcss. And also using json-server package for database</p>
+<p>In this app you can add products and choose their category. If there's no a suitable category, so you can use adding category form and add a new category.</p>
+<p>You can also delete and edit the products. The changes gonna get saved in json.db</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+<div>
+    <img src="/inventory-1.png"/>
+    <br/>
+    <img src="/inventory-2.png"/>
+    <br/>
+    <img src="/inventory-3.png"/>
+</div>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<br/>
+<br/>
+<hr/>
+<br/>
+
+
+<p>
+    Use this command to install all the packages which are used in this project:
+</p>
+<span>
+    npm i
+</span>
+
+<br/>
+<hr/>
+<br/>
+
+<p>
+  And also use this command to start the server:
+</p>
+<span>
+    npm run server
+</span>

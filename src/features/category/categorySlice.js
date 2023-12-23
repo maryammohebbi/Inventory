@@ -1,13 +1,19 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import supabase from "../../supabase";
 
-export const api = axios.create({
-    baseURL: "http://localhost:5000"
-})
+// export const api = axios.create({
+//     baseURL: "http://localhost:5000"
+// })
 
 export const getCategories = createAsyncThunk("categories/getCategories", async(_ , {rejectWithValue})=>{
     try {
-        const {data} = await api.get("/categories")
+        // const {data} = await api.get("/categories")
+        // return data
+        const {data} = await supabase
+        .from("categories")
+        .select("*")
+
         return data
 
     } catch (error) {
@@ -17,14 +23,25 @@ export const getCategories = createAsyncThunk("categories/getCategories", async(
 
 export const addCategory = createAsyncThunk("category/addCategory", async(payload, {rejectWithValue})=>{
     try {
-        const {data} = await api.post("/categories", {
+        // const {data} = await api.post("/categories", {
+        //     id: Date.now(),
+        //     createdAt: new Date().toISOString(),
+        //     title: payload.title,
+        //     description: payload.description
+        // })
+        // return data
+
+        const {data} = await supabase
+        .from("categories")
+        .insert({
             id: Date.now(),
             createdAt: new Date().toISOString(),
             title: payload.title,
             description: payload.description
         })
-        return data
+        .select()
 
+        return data[0]
     } catch (error) {
         return rejectWithValue(error.message)
     }

@@ -28,9 +28,3 @@
 <hr/>
 <br/>
 
-<p>
-  And also use this command to start the server:
-</p>
-<span>
-    npm run server
-</span>
